@@ -1,5 +1,4 @@
 tasks:
-  - before: printf 'export PATH="%s:$PATH"\n' "/workspace/music-data/dsbulk/bin" >> $HOME/.bashrc && exit
   - name: install-dependencies
     init: |
       docker pull cassandra:4.0
