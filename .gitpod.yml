@@ -1,4 +1,5 @@
 tasks:
+  - before: PATH=$PATH:/workspace/time-series-data/dsbulk/bin
   - name: install-dependencies
     init: |
       docker pull cassandra:4.0
@@ -8,8 +9,7 @@ tasks:
       wget -q https://downloads.datastax.com/dsbulk/dsbulk.tar.gz
       tar -xzf dsbulk.tar.gz
       rm dsbulk.tar.gz
-      mv dsbulk* dsbulk
-      PATH=$PATH:/workspace/time-series-data/dsbulk/bin
+      mv dsbulk* dsbulk      
     command: | 
       docker run -p 9042:9042 -d \
                  --name Cassandra \
